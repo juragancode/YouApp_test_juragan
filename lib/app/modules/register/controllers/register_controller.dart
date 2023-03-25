@@ -1,20 +1,37 @@
+import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
 class RegisterController extends GetxController {
-  //TODO: Implement RegisterController
+  FocusNode emailRegisterFN = FocusNode();
+  FocusNode usernameRegisterFN = FocusNode();
+  FocusNode passwordRegisterFN = FocusNode();
+  FocusNode passwordConfirmRegisterFN = FocusNode();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  TextEditingController emailRegister = TextEditingController();
+  TextEditingController usernameRegister = TextEditingController();
+  TextEditingController passwordRegister = TextEditingController();
+  TextEditingController passwordConfirmRegister = TextEditingController();
+
+  RxBool obscureTextPasswordRegister = true.obs;
+  RxBool obscureTextPasswordConfirmRegister = true.obs;
+
+  RxBool isButtonRegister = true.obs;
+
+  void checkButtonStatus() {
+    if (
+
+        ///
+        emailRegister.text.isNotEmpty &&
+            usernameRegister.text.isNotEmpty &&
+            passwordRegister.text.isNotEmpty &&
+            passwordConfirmRegister.text.isNotEmpty
+
+        ///
+        ) {
+      isButtonRegister.value = false;
+    } else {
+      isButtonRegister.value = true;
+    }
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }
