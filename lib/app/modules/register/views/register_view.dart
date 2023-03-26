@@ -18,12 +18,15 @@ class XRegisterViewState extends State<RegisterView> {
   void initState() {
     super.initState();
     controller.usernameRegister.addListener(_updateButtonState);
+    controller.emailRegister.addListener(_updateButtonState);
     controller.passwordRegister.addListener(_updateButtonState);
+    controller.passwordConfirmRegister.addListener(_updateButtonState);
   }
 
   void _updateButtonState() {
     setState(() {
       controller.checkButtonStatus();
+      controller.checkKesamaanPassword();
     });
   }
 
@@ -41,17 +44,19 @@ class XRegisterViewState extends State<RegisterView> {
         appBar: AppBar(
           leading: Padding(
             padding: const EdgeInsets.only(left: 20),
-            child: Icon(
-              CupertinoIcons.back,
+            child: IconButton(
+              onPressed: () {
+                print("Back button pressed");
+                Get.back();
+              },
+              icon: Icon(
+                CupertinoIcons.back,
+              ),
             ),
           ),
-          leadingWidth: 0,
-          title: Padding(
-            padding: const EdgeInsets.only(left: 24),
-            child: Text(
-              'Back',
-              style: TextStyle(),
-            ),
+          title: Text(
+            'Back',
+            style: TextStyle(),
           ),
         ),
         body: Container(

@@ -74,7 +74,12 @@ class ButtonLogin extends StatelessWidget {
               backgroundColor: Colors.transparent,
               shadowColor: Colors.transparent,
               minimumSize: Size(Get.width - 44, 48)),
-          onPressed: controller.isButtonLogin.isTrue ? null : () {},
+          onPressed: controller.isButtonLogin.isTrue
+              ? null
+              : () {
+                  /// login
+                  controller.loginButton();
+                },
           child: Text(
             "Login",
             style: TextStyle(
@@ -142,9 +147,16 @@ class ButtonRegister extends StatelessWidget {
               backgroundColor: Colors.transparent,
               shadowColor: Colors.transparent,
               minimumSize: Size(Get.width - 44, 48)),
-          onPressed: regC.isButtonRegister.isTrue ? null : () {},
+          onPressed: regC.isButtonRegister.isTrue
+              ? null
+              : () {
+                  /// register
+                  regC.registerButton();
+                },
           child: Text(
-            "Register",
+            regC.passwordSama.isTrue
+                ? "Register"
+                : "Passwords are not the same",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 19,

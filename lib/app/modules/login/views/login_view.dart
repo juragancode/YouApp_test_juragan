@@ -17,7 +17,7 @@ class XLoginViewState extends State<LoginView> {
   @override
   void initState() {
     super.initState();
-    controller.usernameLogin.addListener(_updateButtonState);
+    controller.emailLogin.addListener(_updateButtonState);
     controller.passwordLogin.addListener(_updateButtonState);
   }
 
@@ -31,7 +31,7 @@ class XLoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        controller.usernameLoginFN.unfocus();
+        controller.emailLoginFN.unfocus();
         controller.passwordLoginFN.unfocus();
       },
       child: Scaffold(
@@ -39,17 +39,17 @@ class XLoginViewState extends State<LoginView> {
         appBar: AppBar(
           leading: Padding(
             padding: const EdgeInsets.only(left: 20),
-            child: Icon(
-              CupertinoIcons.back,
+            child: IconButton(
+              onPressed: () {
+                print("Back button pressed");
+                Get.back();
+              },
+              icon: Icon(CupertinoIcons.back),
             ),
           ),
-          leadingWidth: 0,
-          title: Padding(
-            padding: const EdgeInsets.only(left: 24),
-            child: Text(
-              'Back',
-              style: TextStyle(),
-            ),
+          title: Text(
+            'Back',
+            style: TextStyle(),
           ),
         ),
         body: Container(
@@ -79,11 +79,11 @@ class XLoginViewState extends State<LoginView> {
                     color: Colors.white.withOpacity(0.1),
                   ),
                   child: TextFormField(
-                    focusNode: controller.usernameLoginFN,
+                    focusNode: controller.emailLoginFN,
                     autocorrect: false,
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.emailAddress,
-                    controller: controller.usernameLogin,
+                    controller: controller.emailLogin,
                     decoration: InputDecoration(
                       hintText: 'Enter Username/Email',
                       hintStyle: TextStyle(color: Colors.grey),
