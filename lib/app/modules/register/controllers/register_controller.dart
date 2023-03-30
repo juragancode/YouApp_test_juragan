@@ -57,7 +57,7 @@ class RegisterController extends GetxController {
           body: {
             "name": usernameRegister.text,
             "email": emailRegister.text,
-            "password": passwordRegister.text
+            "password": passwordConfirmRegister.text
           },
         );
         loadingRegister.value = false;

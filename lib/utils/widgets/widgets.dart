@@ -22,6 +22,12 @@ BoxDecoration Background() {
   );
 }
 
+BoxDecoration Background2() {
+  return BoxDecoration(
+    color: Color(0xFF09141A),
+  );
+}
+
 class ButtonLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -42,6 +42,7 @@ class XRegisterViewState extends State<RegisterView> {
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
+          toolbarHeight: 90.0,
           leading: Padding(
             padding: const EdgeInsets.only(left: 20),
             child: IconButton(

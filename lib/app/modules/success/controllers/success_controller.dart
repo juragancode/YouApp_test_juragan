@@ -1,20 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class SuccessController extends GetxController {
-  //TODO: Implement SuccessController
+  RxBool aboutIsHide = true.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
+  final nameController = TextEditingController();
+  final genderController = TextEditingController();
+  final birthdayController = TextEditingController();
+  final horoscopeController = TextEditingController();
+  final zodiacController = TextEditingController();
+  final heightController = TextEditingController();
+  final weightController = TextEditingController();
 }

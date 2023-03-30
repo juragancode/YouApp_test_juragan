@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:test_01_h_r/utils/themeYouApp.dart';
 
 import 'app/routes/app_pages.dart';
+import 'utils/themeYouApp.dart';
 
 void main() {
   runApp(
@@ -11,8 +10,9 @@ void main() {
       theme: ThemeYouApp(),
       debugShowCheckedModeBanner: false,
       title: "Application",
-      initialRoute: AppPages.INITIAL,
+      initialRoute: AppPages.initial,
       getPages: AppPages.routes,
     ),
   );
 }
+
