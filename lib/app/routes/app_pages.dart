@@ -1,20 +1,22 @@
 import 'package:get/get.dart';
 
-import 'package:test_01_h_r/app/modules/home/bindings/home_binding.dart';
-import 'package:test_01_h_r/app/modules/home/views/home_view.dart';
-import 'package:test_01_h_r/app/modules/login/bindings/login_binding.dart';
-import 'package:test_01_h_r/app/modules/login/views/login_view.dart';
-import 'package:test_01_h_r/app/modules/register/bindings/register_binding.dart';
-import 'package:test_01_h_r/app/modules/register/views/register_view.dart';
-import 'package:test_01_h_r/app/modules/success/bindings/success_binding.dart';
-import 'package:test_01_h_r/app/modules/success/views/success_view.dart';
+import '../modules/Interest/bindings/interest_binding.dart';
+import '../modules/Interest/views/interest_view.dart';
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
+import '../modules/login/bindings/login_binding.dart';
+import '../modules/login/views/login_view.dart';
+import '../modules/register/bindings/register_binding.dart';
+import '../modules/register/views/register_view.dart';
+import '../modules/success/bindings/success_binding.dart';
+import '../modules/success/views/success_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const initial = Routes.SUCCESS;
+  static const initial = Routes.LOGIN;
 
   static final routes = [
     GetPage(
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.SUCCESS,
       page: () => SuccessView(),
       binding: SuccessBinding(),
+    ),
+    GetPage(
+      name: _Paths.INTEREST,
+      page: () => InterestView(),
+      binding: InterestBinding(),
     ),
   ];
 }

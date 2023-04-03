@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 ThemeData ThemeYouApp() {
-  return ThemeData(
+  return ThemeData.dark().copyWith(
+    colorScheme: ColorScheme.dark(
+      primary: Color.fromARGB(255, 37, 141, 130), // Mengubah warna primary
+      onPrimary: Colors.white, // Mengubah warna teks pada tombol primary
+      surface: Colors.teal, // Mengubah warna background
+      onSurface: Colors.white, // Mengubah warna teks pada background
+    ),
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -15,20 +21,6 @@ ThemeData ThemeYouApp() {
         fontWeight: FontWeight.w500,
       ),
     ),
-    inputDecorationTheme: InputDecorationTheme(
-      enabledBorder: OutlineInputBorder(
-        // borderRadius: BorderRadius.circular(9),
-        borderSide: BorderSide(
-          color: Colors.grey.shade700,
-        ),
-      ),
-      disabledBorder: InputBorder.none,
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          width: 1,
-          color: Colors.grey,
-        ),
-      ),
-    ),
+    inputDecorationTheme: InputDecorationTheme(),
   );
 }
